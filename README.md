@@ -11,9 +11,10 @@ Projeto PHP para testar um cadastro de funcionários usando MySQL/MariaDB no XAM
 ## Funcionalidades disponíveis
 
 - **Início:** página inicial do projeto.
-- **Funcionários:** página de listagem; após um cadastro, mostra a confirmação de sucesso.
+- **Funcionários:** tabela de funcionários com ações para editar e excluir; confirma cadastro, atualização e exclusão.
 - **Adicionar Funcionário:** formulário para informar nome, e-mail, cargo, salário e data de admissão.
 - **Cadastro:** grava os dados na tabela `funcionario` do banco `empresa` e redireciona para a página de funcionários.
+- **Edição e exclusão:** permitem atualizar ou remover um funcionário diretamente pela tabela.
 
 ## Estrutura
 
