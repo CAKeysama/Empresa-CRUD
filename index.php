@@ -10,11 +10,7 @@
 <body>
     <?php include 'menu.php' ?>
     <div class ="container mt-5">
-        <h1>Bem vindo a empresa</h1>
-        <ul>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="cadastro.php">Cadastro</a></li>
-    </ul>
+        <h1>Bom dia chefe!</h1>
     </div>
 
 </body>

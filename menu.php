@@ -15,9 +15,6 @@
       <div class="drawer-body mb-2 md:mb-0">
         <ul class="nav navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/Empresa-CRUD/">Início</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/Empresa-CRUD/funcionario/listar.php">Funcionários</a>
           </li>
           <li class="nav-item">

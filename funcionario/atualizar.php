@@ -10,8 +10,9 @@ $email = trim($_POST["email"] ?? "");
 $cargo = trim($_POST["cargo"] ?? "");
 $salario = $_POST["salario"] ?? "";
 $dataAdmissao = $_POST["data_adimissao"] ?? "";
+$ativo = isset($_POST["ativo"]) ? 1 : 0;
 
-if (!$id || $id < 1 || $nome === "" || $cargo === "" || !is_numeric($salario) || !is_finite((float) $salario) || (float) $salario < 0 || $dataAdmissao === "") {
+if (!$id || $id < 1 || $nome === "" || $cargo === "" || !is_numeric($salario) || !is_finite((float) $salario) || (float) $salario < 0 || $dataAdmissao === "" || !in_array($ativo, [0, 1])) {
     http_response_code(400);
     exit("Preencha os campos corretamente para atualizar o funcionário.");
 }
@@ -20,9 +21,9 @@ require_once "../conexao.php";
 
 $stmt = mysqli_prepare(
     $conexao,
-    "UPDATE funcionario SET NOME = ?, EMAIL = ?, CARGO = ?, SALARIO = ?, DATA_ADIMISSAO = ? WHERE ID = ?"
+    "UPDATE funcionario SET NOME = ?, EMAIL = ?, CARGO = ?, SALARIO = ?, DATA_ADIMISSAO = ?, ATIVO = ? WHERE ID = ?"
 );
-mysqli_stmt_bind_param($stmt, "sssdsi", $nome, $email, $cargo, $salario, $dataAdmissao, $id);
+mysqli_stmt_bind_param($stmt, "sssdsii", $nome, $email, $cargo, $salario, $dataAdmissao, $ativo, $id);
 mysqli_stmt_execute($stmt);
 
 if (mysqli_stmt_affected_rows($stmt) < 0) {

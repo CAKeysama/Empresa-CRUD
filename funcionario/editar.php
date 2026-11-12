@@ -7,7 +7,7 @@ if (!$id || $id < 1) {
     exit("ID de funcionário inválido.");
 }
 
-$stmt = mysqli_prepare($conexao, "SELECT ID, NOME, EMAIL, CARGO, SALARIO, DATA_ADIMISSAO FROM funcionario WHERE ID = ?");
+$stmt = mysqli_prepare($conexao, "SELECT ID, NOME, EMAIL, CARGO, SALARIO, DATA_ADIMISSAO, ATIVO FROM funcionario WHERE ID = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
@@ -53,7 +53,11 @@ function escapar($valor)
             <label for="data_adimissao" style="display: inline-block; margin-bottom: 6px;">Data de admissão:</label><br>
             <input type="date" id="data_adimissao" name="data_adimissao" value="<?= escapar($funcionario["DATA_ADIMISSAO"]) ?>" required style="box-sizing: border-box; margin-bottom: 14px; padding: 10px 14px; width: 100%;"><br>
 
+            <label for="ativo" style="display: inline-block; margin-bottom: 6px;">Ativo:</label><br>
+            <input type="checkbox" id="ativo" name="ativo" value="1" <?= $funcionario["ATIVO"] ? "checked" : "" ?> style="margin-bottom: 14px;"><br>
+
             <button type="submit" style="margin-right: 8px; padding: 10px 14px;">Salvar alterações</button>
+            
             <a href="listar.php" style="padding: 10px 14px;">Cancelar</a>
         </form>
     </main>

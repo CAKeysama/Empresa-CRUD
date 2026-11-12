@@ -24,6 +24,9 @@
             <label for="data_adimissao" style="display: inline-block; margin-bottom: 6px;">Data de Admissão:</label><br>
             <input type="date" id="data_adimissao" name="data_adimissao" required style="box-sizing: border-box; margin-bottom: 14px; padding: 10px 14px; width: 100%;"><br>
 
+            <label for="ativo" style="display: inline-block; margin-bottom: 6px;">Ativo:</label><br>
+            <input type="checkbox" id="ativo" name="ativo" value="1" style="margin-bottom: 14px;"><br>
+
             <input type="submit" value="Adicionar Funcionário" style="margin-right: 8px; padding: 10px 14px;">
             <input type="reset" value="Limpar Campos" style="padding: 10px 14px;">
         </form>
